@@ -16,7 +16,6 @@ else
     echo " / /_ ___) |  _  |"
     echo "/____|____/|_| |_|"
     echo
-    echo "Install zsh."
 
     sudo pacman -Syu
     sudo pacman -S kitty zsh ttf-firacode wget
@@ -33,147 +32,173 @@ fi
 if pacman -Q neovim &> /dev/null; then
     echo "neovim is already installed. Skip NvChad process..."
 else
+    echo
     echo " _   _        ____ _               _ "
     echo "| \ | |_   __/ ___| |__   __ _  __| |"
     echo "|  \| \ \ / / |   | '_ \ / _` |/ _` |"
     echo "| |\  |\ V /| |___| | | | (_| | (_| |"
     echo "|_| \_| \_/  \____|_| |_|\__,_|\__,_|"
+    echo
 
     sudo pacman -S neovim ttf-jetbrains-mono-nerd unzip
     git clone https://github.com/NvChad/starter ~/.config/nvim
-    
-    echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
-    echo "Also, do not forget exec kitty +list-fonts"
+
+    echo "Do not forget install the lua files manually"
     echo "autoinstall of NvChad -- DONE"
 fi
 
-echo
-echo " _   _    _    ____  "
-echo "| | | |  / \  / ___| "
-echo "| |_| | / _ \ \___ \ "
-echo "|  _  |/ ___ \ ___) |"
-echo "|_| |_/_/   \_\____/ "
-echo
+if pacman -Q ghc &> /dev/null; then
+    echo "ghc is already installed. Skip HAS process..."
+else
+    echo
+    echo " _   _    _    ____  "
+    echo "| | | |  / \  / ___| "
+    echo "| |_| | / _ \ \___ \ "
+    echo "|  _  |/ ___ \ ___) |"
+    echo "|_| |_/_/   \_\____/ "
+    echo
 
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-exec "$SHELL"
-source .zshrc
-echo '\n' >> ~/.zshrc
-ghc --version
-which haskell-language-server-wrapper
+    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    exec "$SHELL"
+    source .zshrc
+    echo '\n' >> ~/.zshrc
+    ghc --version
+    which haskell-language-server-wrapper
 
-echo "autoinstall of Haskel -- DONE"
+    echo "autoinstall of Haskel -- DONE"
+fi
 
-echo
-echo " ______   __"
-echo "|  _ \ \ / /"
-echo "| |_) \ V / "
-echo "|  __/ | |  "
-echo "|_|    |_|  "
-echo
+if pacman -Q python &> /dev/null; then
+    echo "python is already installed. Skip PY process..."
+else
+    echo
+    echo " ______   __"
+    echo "|  _ \ \ / /"
+    echo "| |_) \ V / "
+    echo "|  __/ | |  "
+    echo "|_|    |_|  "
+    echo
 
-sudo pacman -S python python-pip tk uv
-curl -fsSL https://pyenv.run | zsh
-echo 'export $PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo '[[ -d $PYENV_ROOT/bin]] && export PATH="$PYENV_ROOT/bin: $PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
-exec "$SEHLL"
-rm -rf  ~/.pyenv/plugins/pyenv-virtualenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
-exec "$SHELL"
-pyenv install 3.10.18
-pyenv local 3.10.18
-pyenv virtualenv 3.10.18 venv10
+    sudo pacman -S python python-pip tk uv
+    curl -fsSL https://pyenv.run | zsh
+    echo 'export $PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+    echo '[[ -d $PYENV_ROOT/bin]] && export PATH="$PYENV_ROOT/bin: $PATH"' >> ~/.zshrc
+    echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
+    exec "$SEHLL"
+    rm -rf  ~/.pyenv/plugins/pyenv-virtualenv
+    git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+    exec "$SHELL"
+    pyenv install 3.10.18
+    pyenv local 3.10.18
+    pyenv virtualenv 3.10.18 venv10
 
-echo "autoinstall of Python -- DONE"
+    echo "autoinstall of Python -- DONE"
+fi
 
-echo
-echo " ___ _   _  ___  "
-echo "|_ _| \ | |/ _ \ "
-echo " | ||  \| | | | |"
-echo " | || |\  | |_| |"
-echo "|___|_| \_|\___/ "
-echo
+if [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage ]; then
+    echo "Arduino AppImage (ver. 2.3.7) not found!"
+    echo
+    echo " ___ _   _  ___  "
+    echo "|_ _| \ | |/ _ \ "
+    echo " | ||  \| | | | |"
+    echo " | || |\  | |_| |"
+    echo "|___|_| \_|\___/ "
+    echo
 
-sudo pacman -S fuse
-mkdir -p ~/.local/share/AppImage
-wget -O ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage https://github.com/arduino/arduino-ide/releases/download/2.3.7/arduino-ide_2.3.7_Linux_64bit.AppImage 
-chmod +x ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage
-mkdir -p ~/.local/share/application
-mkdir -p ~/.local/share/icon
-sudo usermod -a -G uucp d3f4l7d
+    sudo pacman -S fuse
+    mkdir -p ~/.local/share/AppImage
+    wget -O ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage https://github.com/arduino/arduino-ide/releases/download/2.3.7/arduino-ide_2.3.7_Linux_64bit.AppImage 
+    chmod +x ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage
+    mkdir -p ~/.local/share/application
+    mkdir -p ~/.local/share/icon
+    sudo usermod -a -G uucp d3f4l7d
 
-echo "Create App Interface (ArduinoProIDE) in ~/.local/share/application/arduino-ide_2.3.7_Linux_64bit.desktop"
-echo "[Desktop Entry]"
-echo "Name=ArduinoProIDE"
-echo "Exec=~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage %u"
-echo "Icon=~/.local/share/icon/arduino-ide_2.3.7_Linux_64bit.jpg"
-echo "Type=Application"
-echo "Categories=Development;"
-echo "StartupNotify=false"
-echo "Terminal=false"
-echo "Keywords=clang;ide;"
-echo "update-desktop-database ~/.local/share/application"
+    echo "Create App Interface (ArduinoProIDE) in ~/.local/share/application/arduino-ide_2.3.7_Linux_64bit.desktop"
+    echo "[Desktop Entry]"
+    echo "Name=ArduinoProIDE"
+    echo "Exec=~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage %u"
+    echo "Icon=~/.local/share/icon/arduino-ide_2.3.7_Linux_64bit.jpg"
+    echo "Type=Application"
+    echo "Categories=Development;"
+    echo "StartupNotify=false"
+    echo "Terminal=false"
+    echo "Keywords=clang;ide;"
+    echo "update-desktop-database ~/.local/share/application"
 
-echo "Create inod.desktop in /etc/xdg/autostart for autostart."
-echo "[Desktop Entry]"
-echo "Name=inod"
-echo "Exec=~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage"
-echo "Type=Application"
-echo "Terminal=false"
-echo "autoinstall of Arduino -- DONE"
+    echo "Create inod.desktop in /etc/xdg/autostart for autostart."
+    echo "[Desktop Entry]"
+    echo "Name=inod"
+    echo "Exec=~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage"
+    echo "Type=Application"
+    echo "Terminal=false"
+    echo "autoinstall of Arduino -- DONE"
+else
+    echo "Arduino is already installed. Skip INO process..."
+fi
 
-echo
-echo " ___ ____  _   _ ____  "
-echo "|_ _| __ )| | | / ___| "
-echo " | ||  _ \| | | \___ \ "
-echo " | || |_) | |_| |___) |"
-echo "|___|____/ \___/|____/ "
-echo
+if pacman -Q ibus &> /dev/null; then
+    echo "ibus is already installed. Skip IBUS process..."
+else
+    echo
+    echo " ___ ____  _   _ ____  "
+    echo "|_ _| __ )| | | / ___| "
+    echo " | ||  _ \| | | \___ \ "
+    echo " | || |_) | |_| |___) |"
+    echo "|___|____/ \___/|____/ "
+    echo
 
-sudo pacman -S ibus ibus-anthy noto-fonts-cjk ttf-ms-fonts
-echo 'export GTK_IM_MODULE=ibus' >> ~/.zshrc
-echo 'export GT_IM_MODULE=ibus' >> ~/.zshrc
-echo 'export XMODIFIERS=@im=ibus' >> ~/.zshrc
+    sudo pacman -S ibus ibus-anthy noto-fonts-cjk ttf-ms-fonts
+    echo 'export GTK_IM_MODULE=ibus' >> ~/.zshrc
+    echo 'export GT_IM_MODULE=ibus' >> ~/.zshrc
+    echo 'export XMODIFIERS=@im=ibus' >> ~/.zshrc
 
-echo "Create ibusd.desktop in /etc/xdg/autostart for autostart."
-echo "[Desktop Entry]"
-echo "Name=ibusd"
-echo "Exec=ibus-daemon -rxRd"
-echo "Type=Application"
-echo "Terminal=false"
-echo "Encoding=UTF-8"
-echo "autoinstall of ibus -- DONE"
+    echo "Create ibusd.desktop in /etc/xdg/autostart for autostart."
+    echo "[Desktop Entry]"
+    echo "Name=ibusd"
+    echo "Exec=ibus-daemon -rxRd"
+    echo "Type=Application"
+    echo "Terminal=false"
+    echo "Encoding=UTF-8"
+    echo "autoinstall of ibus -- DONE"
+fi
 
-echo
-echo "  ____  _    _   _ _____ "
-echo " | __ )| |  | | | | ____|"
-echo " |  _ \| |  | | | |  _|  "
-echo " | |_) | |__| |_| | |___ "
-echo " |____/|_____\___/|_____|"
-echo
+if pacman -Q bluez &> /dev/null; then
+    echo "bluez is already installed. Skip BLUE process..."
+else
+    echo
+    echo "  ____  _    _   _ _____ "
+    echo " | __ )| |  | | | | ____|"
+    echo " |  _ \| |  | | | |  _|  "
+    echo " | |_) | |__| |_| | |___ "
+    echo " |____/|_____\___/|_____|"
+    echo
 
-sudo pacman -S bluez bluez-utils blueman pipewire-pulse pavucontrol
-sudo systemctl start bluetooth.service
-sudo systemctl enable bluetooth.service
+    sudo pacman -S bluez bluez-utils blueman pipewire-pulse pavucontrol
+    sudo systemctl start bluetooth.service
+    sudo systemctl enable bluetooth.service
 
-echo "Uncomment #AutoEnable=true in /etc/bluetooth/main.conf"
-echo "autoinstall of bluetooth -- DONE"
+    echo "Uncomment #AutoEnable=true in /etc/bluetooth/main.conf"
+    echo "autoinstall of bluetooth -- DONE"
+fi
 
-echo
-echo "   ____ _   _ ____  ____  "
-echo "  / ___| | | |  _ \/ ___| "
-echo " | |   | | | | |_) \___ \ "
-echo " | |___| |_| |  __/ ___) |"
-echo "  \____|\___/|_|   |____/ "
-echo
+if pacman -Q cups &> /dev/null; then
+    echo "cups is already installed. Skip CUPS process..."
+else
+    echo
+    echo "   ____ _   _ ____  ____  "
+    echo "  / ___| | | |  _ \/ ___| "
+    echo " | |   | | | | |_) \___ \ "
+    echo " | |___| |_| |  __/ ___) |"
+    echo "  \____|\___/|_|   |____/ "
+    echo
 
-sudo pacman -S cups libxml2-legacy
-sudo systemctl start cups
-sudo systemctl enable cups
+    sudo pacman -S cups libxml2-legacy
+    sudo systemctl start cups
+    sudo systemctl enable cups
 
-echo "autoinstall of cups -- DONE"
+    echo "autoinstall of cups -- DONE"
+fi
 
 echo
 echo " ____   ___  __  __ _____ ____ _   _  ___  ____  ____  ____  "
