@@ -5,6 +5,7 @@ echo "  / _ \| | | | | || | | | ||  \| \___ \ | | / _ \ | |   | |    "
 echo " / ___ \ |_| | | || |_| | || |\  |___) || |/ ___ \| |___| |___ "
 echo "/_/   \_\___/  |_| \___/___|_| \_|____/ |_/_/   \_\_____|_____|"
 echo
+sleep 1
 
 if pacman -Q zsh &> /dev/null; then
     echo "zsh is already installed. Skip ZSH process..."
