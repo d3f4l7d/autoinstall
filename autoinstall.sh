@@ -33,7 +33,7 @@ echo " ___) | |_| | |  | | |__| |___|  _  | |_| |  _ <| |_| |___) |"
 echo "|____/ \___/|_|  |_|_____\____|_| |_|\___/|_| \_\____/|____/ "
 echo
 
-sudo pacman -S gvfs gvfs-mtp gvfs-smb evince neovim ttf-jetbrains-mono-nerd unzip
+sudo pacman -S gvfs gvfs-mtp gvfs-smb samba evince neovim ttf-jetbrains-mono-nerd unzip
 git clone https://github.com/NvChad/starter ~/.config/nvim
 
 echo
@@ -51,3 +51,22 @@ echo '\n' >> ~/.zshrc
 ghc --version
 which haskell-language-server-wrapper
 
+echo " ______   __"
+echo "|  _ \ \ / /"
+echo "| |_) \ V / "
+echo "|  __/ | |  "
+echo "|_|    |_|  "
+
+sudo pacman -S python python-pip tk uv
+curl -fsSL https://pyenv.run | zsh
+echo 'export $PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin]] && export PATH="$PYENV_ROOT/bin: $PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
+exec "$SEHLL"
+rm -rf  ~/.pyenv/plugins/pyenv-virtualenv
+git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+exec "$SHELL"
+pyenv install 3.10.18
+pyenv local 3.10.18
+pyenv virtualenv 3.10.18 venv10
