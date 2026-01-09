@@ -6,35 +6,46 @@ echo " / ___ \ |_| | | || |_| | || |\  |___) || |/ ___ \| |___| |___ "
 echo "/_/   \_\___/  |_| \___/___|_| \_|____/ |_/_/   \_\_____|_____|"
 echo
 
-echo 
-echo " _________  _   _ "
-echo "|__  / ___|| | | |"
-echo "  / /\___ \| |_| |"
-echo " / /_ ___) |  _  |"
-echo "/____|____/|_| |_|"
-echo
+if pacman -Q zsh &> /dev/null; then
+    echo "zsh is already installed. Skip ZSH process..."
+else
+    echo 
+    echo " _________  _   _ "
+    echo "|__  / ___|| | | |"
+    echo "  / /\___ \| |_| |"
+    echo " / /_ ___) |  _  |"
+    echo "/____|____/|_| |_|"
+    echo
+    echo "Install zsh."
 
-sudo pacman -Syu
-sudo pacman -S kitty zsh ttf-firacode wget
-sudo chsh -s /bin/zsh d3f4l7d
-sudo cat /etc/passwd | grep d3f4l7d
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-wget -O ~/.oh-my-zsh/themes/kali-like.zsh-theme https://raw.githubusercontent.com/clamy54/kali-like-zsh-theme/master/kali-like.zsh-theme
+    sudo pacman -Syu
+    sudo pacman -S kitty zsh ttf-firacode wget
+    sudo chsh -s /bin/zsh d3f4l7d
+    sudo cat /etc/passwd | grep d3f4l7d
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    wget -O ~/.oh-my-zsh/themes/kali-like.zsh-theme https://raw.githubusercontent.com/clamy54/kali-like-zsh-theme/master/kali-like.zsh-theme
 
-echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
-echo "Also, do not forget exec kitty +list-fonts"
-echo "autoinstall of zsh -- DONE"
+    echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
+    echo "Also, do not forget exec kitty +list-fonts"
+    echo "autoinstall of zsh -- DONE"
+fi
 
-echo
-echo " ____   ___  __  __ _____ ____ _   _  ___  ____  ____  ____  "
-echo "/ ___| / _ \|  \/  | ____/ ___| | | |/ _ \|  _ \|  _ \/ ___| "
-echo "\___ \| | | | |\/| |  _|| |   | |_| | | | | |_) | | | \___ \ "
-echo " ___) | |_| | |  | | |__| |___|  _  | |_| |  _ <| |_| |___) |"
-echo "|____/ \___/|_|  |_|_____\____|_| |_|\___/|_| \_\____/|____/ "
-echo
+if pacman -Q neovim &> /dev/null; then
+    echo "neovim is already installed. Skip NvChad process..."
+else
+    echo " _   _        ____ _               _ "
+    echo "| \ | |_   __/ ___| |__   __ _  __| |"
+    echo "|  \| \ \ / / |   | '_ \ / _` |/ _` |"
+    echo "| |\  |\ V /| |___| | | | (_| | (_| |"
+    echo "|_| \_| \_/  \____|_| |_|\__,_|\__,_|"
 
-sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince neovim ttf-jetbrains-mono-nerd unzip
-git clone https://github.com/NvChad/starter ~/.config/nvim
+    sudo pacman -S neovim ttf-jetbrains-mono-nerd unzip
+    git clone https://github.com/NvChad/starter ~/.config/nvim
+    
+    echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
+    echo "Also, do not forget exec kitty +list-fonts"
+    echo "autoinstall of NvChad -- DONE"
+fi
 
 echo
 echo " _   _    _    ____  "
@@ -163,3 +174,15 @@ sudo systemctl start cups
 sudo systemctl enable cups
 
 echo "autoinstall of cups -- DONE"
+
+echo
+echo " ____   ___  __  __ _____ ____ _   _  ___  ____  ____  ____  "
+echo "/ ___| / _ \|  \/  | ____/ ___| | | |/ _ \|  _ \|  _ \/ ___| "
+echo "\___ \| | | | |\/| |  _|| |   | |_| | | | | |_) | | | \___ \ "
+echo " ___) | |_| | |  | | |__| |___|  _  | |_| |  _ <| |_| |___) |"
+echo "|____/ \___/|_|  |_|_____\____|_| |_|\___/|_| \_\____/|____/ "
+echo
+
+sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
+
+
