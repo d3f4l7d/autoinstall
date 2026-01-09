@@ -11,3 +11,5 @@ sudo pacman -S kitty zsh ttf-firacode wget
 sudo chsh -s /bin/zsh d3f4l7d
 sudo cat /etc/passwd | grep d3f4l7d
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+wget -O ~/.oh-my-zsh/themes/kali-like.zsh-theme https://raw.githubusercontent.com/clamy54/kali-like-zsh-theme/master/kali-like.zsh-theme
+
