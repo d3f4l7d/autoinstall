@@ -5,7 +5,8 @@ echo "  / _ \| | | | | || | | | ||  \| \___ \ | | / _ \ | |   | |    "
 echo " / ___ \ |_| | | || |_| | || |\  |___) || |/ ___ \| |___| |___ "
 echo "/_/   \_\___/  |_| \___/___|_| \_|____/ |_/_/   \_\_____|_____|"
 echo
-sleep 1
+
+sudo pacman -Syu --noconfirm
 
 if pacman -Q zsh &> /dev/null; then
     echo "zsh is already installed. Skip ZSH process..."
@@ -201,14 +202,17 @@ else
     echo "autoinstall of cups -- DONE"
 fi
 
-echo
-echo " ____   ___  __  __ _____ ____ _   _  ___  ____  ____  ____  "
-echo "/ ___| / _ \|  \/  | ____/ ___| | | |/ _ \|  _ \|  _ \/ ___| "
-echo "\___ \| | | | |\/| |  _|| |   | |_| | | | | |_) | | | \___ \ "
-echo " ___) | |_| | |  | | |__| |___|  _  | |_| |  _ <| |_| |___) |"
-echo "|____/ \___/|_|  |_|_____\____|_| |_|\___/|_| \_\____/|____/ "
-echo
+if pacman -Q gvfs &> /dev/null; then
+    echo "gvfs is already installed. Skip MGR process..."
+else
+    echo
+    echo " __  __  ____ ____  "
+    echo "|  \/  |/ ___|  _ \ "
+    echo "| |\/| | |  _| |_) |"
+    echo "| |  | | |_| |  _ < "
+    echo "|_|  |_|\____|_| \_\"
+    echo
 
-sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
-
+    sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
+fi
 
