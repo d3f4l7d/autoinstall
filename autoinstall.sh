@@ -216,6 +216,6 @@ else
     echo
 
     sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
+
+    echo "autoinstall of gvfs && other -- DONE"
 fi
-
-
