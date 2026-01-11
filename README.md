@@ -1,2 +1,2 @@
 # autoinstall script for fresh Arch Linux system
-Execute autoinstall.sh then softinstall.sh or nvidiainstall
+Execute autoinstall.sh (for coding env) then softinstall.sh (for GUI based work) or nvidiainstall.sh (for machine learning related work)
