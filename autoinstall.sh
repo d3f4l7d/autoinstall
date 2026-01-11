@@ -66,7 +66,7 @@ then
     ghc --version
     which haskell-language-server-wrapper
 
-    echo "autoinstall of Haskel -- DONE"
+    echo "autoinstall of Haskell -- DONE"
 else
     echo "Haskell is already installed. Skip HAS process..."
 fi
