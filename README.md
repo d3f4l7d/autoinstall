@@ -1,2 +1,2 @@
 # autoinstall script for fresh Arch Linux system
-Execute order66
+Execute autoinstall.sh then softinstall.sh or nvidiainstall
