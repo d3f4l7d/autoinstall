@@ -49,9 +49,8 @@ else
     echo "autoinstall of NvChad -- DONE"
 fi
 
-if pacman -Q ghc &> /dev/null; then
-    echo "ghc is already installed. Skip HAS process..."
-else
+if ! command -v ghc &> /dev/null
+then
     echo
     echo " _   _    _    ____  "
     echo "| | | |  / \  / ___| "
@@ -68,6 +67,8 @@ else
     which haskell-language-server-wrapper
 
     echo "autoinstall of Haskel -- DONE"
+else
+    echo "Haskell is already installed. Skip HAS process..."
 fi
 
 if pacman -Q python &> /dev/null; then
@@ -114,13 +115,14 @@ if [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage ]; then
     chmod +x ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage
     mkdir -p ~/.local/share/application
     mkdir -p ~/.local/share/icon
+    wget -O ~/.local/share/iconE/ArduinoCommunityLogo-up.png https://github.com/d3f4l7d/autoinstall/tree/main/icon/ArduinoCommunityLogo-up.png
     sudo usermod -a -G uucp d3f4l7d
 
     echo "Create App Interface (ArduinoProIDE) in ~/.local/share/application/arduino-ide_2.3.7_Linux_64bit.desktop"
     echo "[Desktop Entry]"
     echo "Name=ArduinoProIDE"
     echo "Exec=~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage %u"
-    echo "Icon=~/.local/share/icon/arduino-ide_2.3.7_Linux_64bit.jpg"
+    echo "Icon=~/.local/share/icon/ArduinoCommunityLogo-up.png"
     echo "Type=Application"
     echo "Categories=Development;"
     echo "StartupNotify=false"
@@ -215,4 +217,5 @@ else
 
     sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
 fi
+
 
