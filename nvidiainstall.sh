@@ -10,7 +10,7 @@ echo "This script is tested && worked w/ Nvidia GeForce RTX4090 (AD102) on MSI m
 
 sudo pacman -Syu --noconfirm
 
-sudo pacman -S linux-firmware-nvidia nvidia-open-dkms nvidia-settings nvidia-utils opencl-nvidia nvtop nvhpc
+sudo pacman -S linux-firmware-nvidia nvidia-open-dkms nvidia-settings nvidia-utils opencl-nvidia nvtop nvhpc dkms xorg-server xorg-xinit
 mkdir ~/.config/gcc12
 mkdir ~/.config/cuda
 mkdir ~/.config/cudnn
@@ -28,3 +28,15 @@ cd
 echo 'export PATH="/opt/cuda/bin:$PATH"' >> ~/.zshrc
 echo 'export CUDA_HOME="/opt/cuda"' >> ~/.zshrc
 
+echo "sudo vim /etc/pacman.conf"
+echo "Edit below line:"
+echo "IgnorePkg = cuda cudnn"
+echo "sudo vim /etc/mkinitcpio.conf"
+echo "Edit below lines:"
+echo "MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)"
+echo "HOOKS=(base udev autodetect microcode modconf keyboard keymap consolefont block filesystems fsck)"
+echo "sudo mkinitcpio -P"
+echo "sudo reboot"
+echo "lspci -k -d ::03xx && nvidia-smi"
+
+echo "autoinstall of Nvidia -- DONE"
