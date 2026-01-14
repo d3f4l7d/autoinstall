@@ -63,7 +63,10 @@ then
 
 else
     echo "exec "$SHELL" manually"
+    echo "source ~/.zshrc"
     echo "Haskell is already installed. Skip HAS process..."
+    ghc --version
+    which haskell-language-server-wrapper
 fi
 
 if pacman -Q python-pip &> /dev/null; then
@@ -75,15 +78,11 @@ else
     echo "| |_) \ V / "
     echo "|  __/ | |  "
     echo "|_|    |_|  "
-    echo
-
-    source ~/.zshrc
-    echo '\n' >> ~/.zshrc
-    ghc --version
-    which haskell-language-server-wrapper
+    echo  
 
     sudo pacman -S python python-pip tk
     curl -fsSL https://pyenv.run | zsh
+    echo '\n' >> ~/.zshrc
     echo 'export $PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
     echo '[[ -d $PYENV_ROOT/bin]] && export PATH="$PYENV_ROOT/bin: $PATH"' >> ~/.zshrc
     echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
