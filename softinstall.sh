@@ -63,7 +63,7 @@ else
     echo "|___|____/ "
     echo
 
-    sudo pacman -S inkscape python-tinycss2 typst gtksourceview3 texlive-latex texlive-latexrecommended texlive-latexextra
+    sudo pacman -S inkscape python-tinycss2 typst gtksourceview3 texlive-latex texlive-latexrecommended texlive-latexextra gtk3
     mkdir ~/.config/textext
     wget -O ~/.config/textext/TexText-Linux-1.13.0.tar.gz https://github.com/textext/textext/releases/download/1.13.0/TexText-Linux-1.13.0.tar.gz
     cd ~/.config/textext
