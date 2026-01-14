@@ -62,6 +62,7 @@ then
     curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 else
+    echo "exec "$SHELL" manually"
     echo "Haskell is already installed. Skip HAS process..."
 fi
 
@@ -76,7 +77,6 @@ else
     echo "|_|    |_|  "
     echo
 
-    exec "$SHELL"
     source ~/.zshrc
     echo '\n' >> ~/.zshrc
     ghc --version
