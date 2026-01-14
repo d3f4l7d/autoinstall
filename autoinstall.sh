@@ -20,7 +20,7 @@ else
     echo
 
     sudo pacman -Syu
-    sudo pacman -S kitty zsh ttf-firacode wget
+    sudo pacman -S kitty zsh ttf-fira-code wget
     sudo chsh -s /bin/zsh d3f4l7d
     sudo cat /etc/passwd | grep d3f4l7d
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
