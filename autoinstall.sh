@@ -84,6 +84,7 @@ else
     echo  
 
     sudo pacman -S python python-pip tk
+    rm -rf  ~/.pyenv
     curl -fsSL https://pyenv.run | zsh
     echo '\n' >> ~/.zshrc
     echo 'export $PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
@@ -216,5 +217,5 @@ else
 
     sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
 
-    echo "autoinstall of gvfs && other -- DONE"
+    echo "autoinstall of mgr -- DONE"
 fi
