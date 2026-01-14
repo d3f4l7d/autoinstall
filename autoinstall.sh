@@ -219,3 +219,20 @@ else
 
     echo "autoinstall of mgr -- DONE"
 fi
+
+if pacman -Q zsh neovim python-pip ibus bluez cups gvfs &> /dev/null && ! command -v ghc &> /dev/null && [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage]; then
+    echo
+    echo " _   _ _____ ____  _____  __        _______    ____  ___  "
+    echo "| | | | ____|  _ \| ____| \ \      / / ____|  / ___|/ _ \ "
+    echo "| |_| |  _| | |_) |  _|    \ \ /\ / /|  _|   | |  _| | | |"
+    echo "|  _  | |___|  _ <| |___    \ V  V / | |___  | |_| | |_| |"
+    echo "|_| |_|_____|_| \_\_____|    \_/\_/  |_____|  \____|\___/ "
+    echo
+else
+    echo
+    echo "__        ___    ___ _____   ____  _____ ____   ___    ___ _____ "
+    echo "\ \      / / \  |_ _|_   _| |  _ \| ____|  _ \ / _ \  |_ _|_   _|"
+    echo " \ \ /\ / / _ \  | |  | |   | |_) |  _| | | | | | | |  | |  | |  "
+    echo "  \ V  V / ___ \ | |  | |   |  _ <| |___| |_| | |_| |  | |  | |  "
+    echo "   \_/\_/_/   \_\___| |_|   |_| \_\_____|____/ \___/  |___| |_|  "
+    echo
