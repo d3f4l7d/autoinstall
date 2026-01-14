@@ -53,14 +53,14 @@ else
 fi
 
 if pacman -Q inkscape &> /dev/null; then
-    echo "inkscape is already installed. Skip INK process..."
+    echo "inkscape is already installed. Skip IS process..."
 else
     echo
-    echo " ___ _   _ _  __"
-    echo "|_ _| \ | | |/ /"
-    echo " | ||  \| | ' / "
-    echo " | || |\  | . \ "
-    echo "|___|_| \_|_|\_\"
+    echo " ___ ____  "
+    echo "|_ _/ ___| "
+    echo " | |\___ \ "
+    echo " | | ___) |"
+    echo "|___|____/ "
     echo
 
     sudo pacman -S inkscape python-tinycss2 typst gtksourceview3 texlive-latex texlive-latexrecommended texlive-latexextra
