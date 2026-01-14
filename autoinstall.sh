@@ -65,8 +65,8 @@ else
     echo "Haskell is already installed. Skip HAS process..."
 fi
 
-if pacman -Q python &> /dev/null; then
-    echo "python is already installed. Skip PY process..."
+if pacman -Q python-pip &> /dev/null; then
+    echo "python-pip is already installed. Skip PY process..."
 else
     echo
     echo " ______   __"
@@ -82,7 +82,7 @@ else
     ghc --version
     which haskell-language-server-wrapper
 
-    sudo pacman -S python python-pip tk uv
+    sudo pacman -S python python-pip tk
     curl -fsSL https://pyenv.run | zsh
     echo 'export $PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
     echo '[[ -d $PYENV_ROOT/bin]] && export PATH="$PYENV_ROOT/bin: $PATH"' >> ~/.zshrc
