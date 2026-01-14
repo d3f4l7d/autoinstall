@@ -71,6 +71,9 @@ fi
 
 if pacman -Q python-pip &> /dev/null; then
     echo "python-pip is already installed. Skip PY process..."
+    pyenv install 3.10.18
+    pyenv local 3.10.18
+    pyenv virtualenv 3.10.18 venv10
 else
     echo
     echo " ______   __"
@@ -86,14 +89,11 @@ else
     echo 'export $PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
     echo '[[ -d $PYENV_ROOT/bin]] && export PATH="$PYENV_ROOT/bin: $PATH"' >> ~/.zshrc
     echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
-    exec "$SEHLL"
+    echo "exec "$SHELL" manually"
     rm -rf  ~/.pyenv/plugins/pyenv-virtualenv
     git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
     echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
-    exec "$SHELL"
-    pyenv install 3.10.18
-    pyenv local 3.10.18
-    pyenv virtualenv 3.10.18 venv10
+    echo "exec "$SHELL" manually"
 
     echo "autoinstall of Python -- DONE"
 fi
