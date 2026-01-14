@@ -152,7 +152,7 @@ else
     echo "|___|____/ \___/|____/ "
     echo
 
-    sudo pacman -S ibus ibus-anthy noto-fonts-cjk ttf-ms-fonts
+    sudo pacman -Sy ibus ibus-anthy noto-fonts-cjk
     echo 'export GTK_IM_MODULE=ibus' >> ~/.zshrc
     echo 'export GT_IM_MODULE=ibus' >> ~/.zshrc
     echo 'export XMODIFIERS=@im=ibus' >> ~/.zshrc
@@ -205,14 +205,14 @@ else
 fi
 
 if pacman -Q gvfs &> /dev/null; then
-    echo "gvfs is already installed. Skip MGR process..."
+    echo "gvfs is already installed. Skip GVFS process..."
 else
     echo
-    echo " __  __  ____ ____  "
-    echo "|  \/  |/ ___|  _ \ "
-    echo "| |\/| | |  _| |_) |"
-    echo "| |  | | |_| |  _ < "
-    echo "|_|  |_|\____|_| \_\"
+    echo "  ______     _______ ____  "
+    echo " / ___\ \   / /  ___/ ___| "
+    echo "| |  _ \ \ / /| |_  \___ \ "
+    echo "| |_| | \ V / |  _|  ___) |"
+    echo " \____|  \_/  |_|   |____/ "
     echo
 
     sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
