@@ -27,7 +27,7 @@ else
     wget -O ~/.oh-my-zsh/themes/kali-like.zsh-theme https://raw.githubusercontent.com/clamy54/kali-like-zsh-theme/master/kali-like.zsh-theme
 
     echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
-    echo "Also, do not forget exec kitty +list-fonts"
+    echo "Also, do not forget exec kitty +list-fonts && sudo reboot"
     echo "autoinstall of zsh -- DONE"
 fi
 
@@ -60,13 +60,7 @@ then
     echo
 
     curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-    exec "$SHELL"
-    source .zshrc
-    echo '\n' >> ~/.zshrc
-    ghc --version
-    which haskell-language-server-wrapper
 
-    echo "autoinstall of Haskell -- DONE"
 else
     echo "Haskell is already installed. Skip HAS process..."
 fi
@@ -81,6 +75,12 @@ else
     echo "|  __/ | |  "
     echo "|_|    |_|  "
     echo
+
+    exec "$SHELL"
+    source ~/.zshrc
+    echo '\n' >> ~/.zshrc
+    ghc --version
+    which haskell-language-server-wrapper
 
     sudo pacman -S python python-pip tk uv
     curl -fsSL https://pyenv.run | zsh
