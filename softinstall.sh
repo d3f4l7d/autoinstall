@@ -69,9 +69,7 @@ else
     cd ~/.config/textext
     tar -xvzf TexText-Linux-1.13.0.tar.gz
     cd ~/.config/textext/textext-1.13.0
-    pyenv activate venv10
     python3 setup.py
-    deactivate
 
     echo "autoinstall of inkscape -- DONE"
 fi
