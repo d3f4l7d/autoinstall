@@ -101,11 +101,11 @@ fi
 if ! command -v firefox &> /dev/null
 then
     echo
-    echo " _____ _____  __"
-    echo "|  ___/ _ \ \/ /"
-    echo "| |_ | | | \  / "
-    echo "|  _|| |_| /  \ "
-    echo "|_|   \___/_/\_\"
+    echo "__  _____  _____ "
+    echo "\ \/ / _ \|  ___|"
+    echo " \  / | | | |_   "
+    echo " /  \ |_| |  _|  "
+    echo "/_/\_\___/|_|    "
     echo
 
     git clone https://aur.archlinux.org/yay-git.git ~/.config/yay-git
