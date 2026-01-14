@@ -27,7 +27,7 @@ else
     wget -O ~/.oh-my-zsh/themes/kali-like.zsh-theme https://raw.githubusercontent.com/clamy54/kali-like-zsh-theme/master/kali-like.zsh-theme
 
     echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
-    echo "Also, do not forget exec kitty +list-fonts && sudo reboot"
+    echo "Also, do not forget exec kitty +list-fonts locally && sudo reboot"
     echo "autoinstall of zsh -- DONE"
 fi
 
