@@ -220,7 +220,7 @@ else
     echo "autoinstall of mgr -- DONE"
 fi
 
-if pacman -Q zsh neovim python-pip ibus bluez cups gvfs &> /dev/null && ! command -v ghc &> /dev/null && [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage]; then
+if [pacman -Q zsh neovim python-pip ibus bluez cups gvfs &> /dev/null] && [ ! command -v ghc &> /dev/null ] && [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage]; then
     echo
     echo " _   _ _____ ____  _____  __        _______    ____  ___  "
     echo "| | | | ____|  _ \| ____| \ \      / / ____|  / ___|/ _ \ "
