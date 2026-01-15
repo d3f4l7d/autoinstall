@@ -37,7 +37,7 @@ else
     echo "|  _ <| |___| |_) | |_| | |_| || |   | |\  | |_| |\ V  V /  "
     echo "|_| \_\_____|____/ \___/ \___/ |_|   |_| \_|\___/  \_/\_/   "
     echo
-    break
+    
 fi
 
 if pacman -Q neovim &> /dev/null; then
@@ -75,6 +75,7 @@ then
     echo "|_| |_/_/   \_\____/ "
     echo
 
+    echo "DYYAYY"
     curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 else
