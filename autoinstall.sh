@@ -37,7 +37,7 @@ else
     echo "|  _ <| |___| |_) | |_| | |_| || |   | |\  | |_| |\ V  V /  "
     echo "|_| \_\_____|____/ \___/ \___/ |_|   |_| \_|\___/  \_/\_/   "
     echo
-
+    break
 fi
 
 if pacman -Q neovim &> /dev/null; then
