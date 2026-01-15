@@ -214,7 +214,7 @@ else
     echo "autoinstall of cups -- DONE"
 fi
 
-if pacman -Q gvfs &> /dev/null; then
+if pacman -Q gvfs-mtp &> /dev/null; then
     echo "gvfs is already installed. Skip GVFS process..."
 else
     echo
