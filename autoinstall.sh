@@ -20,7 +20,7 @@ else
     echo
 
     sudo pacman -Syu
-    sudo pacman -S kitty zsh wget ttf-fira-code
+    sudo pacman -S --noconfirm kitty zsh wget ttf-fira-code
     sudo chsh -s /bin/zsh d3f4l7d
     sudo cat /etc/passwd | grep d3f4l7d
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -52,8 +52,9 @@ else
     echo "|_| \_| \_/  \____|_| |_|\__,_|\__,_|"
     echo
 
-    sudo pacman -S neovim ttf-jetbrains-mono-nerd unzip
+    sudo pacman -S --noconfirm neovim ttf-jetbrains-mono-nerd unzip
     git clone https://github.com/NvChad/starter ~/.config/nvim
+    nvim
     mkdir ~/.config/nvim/lua/custom
     mkdir ~/.config/nvim/lua/custom/configs
     rm -rf ~/.config/nvim/lua/chadrc.lua
