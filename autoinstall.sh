@@ -140,7 +140,7 @@ if [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage ]; then
     echo "Keywords=clang;ide;"
     echo "update-desktop-database ~/.local/share/application"
 
-    echo "Create inod.desktop in /etc/xdg/autostart for autostart."
+    echo "Create /etc/xdg/autostart/inod.desktop for autostart."
     echo "[Desktop Entry]"
     echo "Name=inod"
     echo "Exec=~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage"
@@ -167,7 +167,7 @@ else
     echo 'export GT_IM_MODULE=ibus' >> ~/.zshrc
     echo 'export XMODIFIERS=@im=ibus' >> ~/.zshrc
 
-    echo "Create ibusd.desktop in /etc/xdg/autostart for autostart."
+    echo "Create /etc/xdg/autostart/ibusd.desktop for autostart."
     echo "[Desktop Entry]"
     echo "Name=ibusd"
     echo "Exec=ibus-daemon -rxRd"
