@@ -55,14 +55,6 @@ else
     sudo pacman -S --noconfirm neovim ttf-jetbrains-mono-nerd unzip
     git clone https://github.com/NvChad/starter ~/.config/nvim
     nvim
-    mkdir ~/.config/nvim/lua/custom
-    mkdir ~/.config/nvim/lua/custom/configs
-    rm -rf ~/.config/nvim/lua/chadrc.lua
-    wget -O ~/.config/nvim/lua/chadrc.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/chadrc.lua
-    wget -O ~/.config/nvim/lua/custom/mappings.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/mappings.lua
-    wget -O ~/.config/nvim/lua/custom/plugins.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/plugins.lua
-    wget -O ~/.config/nvim/lua/custom/configs/lspconfig.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/configs/lspconfig.lua
-    wget -O ~/.config/nvim/lua/custom/configs/null-ls.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/configs/null-ls.lua
     
     echo "autoinstall of NvChad -- DONE"
 fi
@@ -102,7 +94,7 @@ else
     echo "|_|    |_|  "
     echo  
 
-    sudo pacman -S python python-pip tk
+    sudo pacman -S --noconfirm python python-pip tk
     rm -rf  ~/.pyenv
     curl -fsSL https://pyenv.run | zsh
     echo >> ~/.zshrc
@@ -128,13 +120,12 @@ if [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage ]; then
     echo "|___|_| \_|\___/ "
     echo
 
-    sudo pacman -S fuse
+    sudo pacman -S --noconfirm fuse
     mkdir -p ~/.local/share/AppImage
     wget -O ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage https://github.com/arduino/arduino-ide/releases/download/2.3.7/arduino-ide_2.3.7_Linux_64bit.AppImage 
     chmod +x ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage
     mkdir -p ~/.local/share/application
     mkdir -p ~/.local/share/icon
-    wget -O ~/.local/share/iconE/ArduinoCommunityLogo-up.png https://github.com/d3f4l7d/autoinstall/tree/main/icon/ArduinoCommunityLogo-up.png
     sudo usermod -a -G uucp d3f4l7d
 
     echo "Create App Interface (ArduinoProIDE) in ~/.local/share/application/arduino-ide_2.3.7_Linux_64bit.desktop"
@@ -171,7 +162,7 @@ else
     echo "|___|____/ \___/|____/ "
     echo
 
-    sudo pacman -Sy ibus ibus-anthy noto-fonts-cjk
+    sudo pacman -Sy --noconfirm ibus ibus-anthy noto-fonts-cjk
     echo 'export GTK_IM_MODULE=ibus' >> ~/.zshrc
     echo 'export GT_IM_MODULE=ibus' >> ~/.zshrc
     echo 'export XMODIFIERS=@im=ibus' >> ~/.zshrc
@@ -197,7 +188,7 @@ else
     echo " |____/|_____\___/|_____|"
     echo
 
-    sudo pacman -S bluez bluez-utils blueman pipewire-pulse pavucontrol
+    sudo pacman -S --noconfirm bluez bluez-utils blueman pipewire-pulse pavucontrol
     sudo systemctl start bluetooth.service
     sudo systemctl enable bluetooth.service
 
@@ -216,7 +207,7 @@ else
     echo "  \____|\___/|_|   |____/ "
     echo
 
-    sudo pacman -S cups libxml2-legacy
+    sudo pacman -S --noconfirm cups libxml2-legacy
     sudo systemctl start cups
     sudo systemctl enable cups
 
@@ -234,7 +225,7 @@ else
     echo " \____|  \_/  |_|   |____/ "
     echo
 
-    sudo pacman -S gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
+    sudo pacman -S --noconfirm gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
 
     echo "autoinstall of mgr -- DONE"
 fi
