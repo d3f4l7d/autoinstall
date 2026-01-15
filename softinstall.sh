@@ -112,6 +112,7 @@ then
     cd ~/.config/yay-git
     makepkg -sirc
     cd
+    echo "select pipewire-jack"
     yay -S firefox
 
     echo "autoinstall of firefox -- DONE"
@@ -147,9 +148,18 @@ else
     echo "/_/\_\_|   \____|_____|  |_|  "
     echo
 
+    echo "select ALL"
     sudo pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
     sudo systemctl enable lightdm
     
     echo "Xfce4 will be applied after reboot"
     echo "autoinstall of Xfce4 -- DONE"
 fi
+
+echo
+echo " ____  _____ ____   ___   ___ _____   _   _  _____        __"
+echo "|  _ \| ____| __ ) / _ \ / _ \_   _| | \ | |/ _ \ \      / /"
+echo "| |_) |  _| |  _ \| | | | | | || |   |  \| | | | \ \ /\ / / "
+echo "|  _ <| |___| |_) | |_| | |_| || |   | |\  | |_| |\ V  V /  "
+echo "|_| \_\_____|____/ \___/ \___/ |_|   |_| \_|\___/  \_/\_/   "
+echo
