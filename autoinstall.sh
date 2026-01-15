@@ -20,7 +20,7 @@ else
     echo
 
     sudo pacman -Syu
-    sudo pacman -S kitty zsh ttf-fira-code wget
+    sudo pacman -S kitty zsh wget ttf-fira-code
     sudo chsh -s /bin/zsh d3f4l7d
     sudo cat /etc/passwd | grep d3f4l7d
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -53,8 +53,15 @@ else
 
     sudo pacman -S neovim ttf-jetbrains-mono-nerd unzip
     git clone https://github.com/NvChad/starter ~/.config/nvim
-
-    echo "Do not forget install the lua files manually"
+    mkdir ~/.config/nvim/lua/custom
+    mkdir ~/.config/nvim/lua/custom/configs
+    rm -rf ~/.config/nvim/lua/chadrc.lua
+    wget -O ~/.config/nvim/lua/chadrc.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/chadrc.lua
+    wget -O ~/.config/nvim/lua/custom/mappings.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/mappings.lua
+    wget -O ~/.config/nvim/lua/custom/plugins.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/plugins.lua
+    wget -O ~/.config/nvim/lua/custom/configs/lspconfig.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/configs/lspconfig.lua
+    wget -O ~/.config/nvim/lua/custom/configs/null-ls.lua https://github.com/d3f4l7d/autoinstall/nvim/lua/custom/configs/null-ls.lua
+    
     echo "autoinstall of NvChad -- DONE"
 fi
 
