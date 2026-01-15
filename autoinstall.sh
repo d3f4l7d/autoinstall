@@ -29,6 +29,15 @@ else
     echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
     echo "Also, do not forget exec kitty +list-fonts locally && sudo reboot"
     echo "autoinstall of zsh -- DONE"
+
+    echo
+    echo " ____  _____ ____   ___   ___ _____   _   _  _____        __"
+    echo "|  _ \| ____| __ ) / _ \ / _ \_   _| | \ | |/ _ \ \      / /"
+    echo "| |_) |  _| |  _ \| | | | | | || |   |  \| | | | \ \ /\ / / "
+    echo "|  _ <| |___| |_) | |_| | |_| || |   | |\  | |_| |\ V  V /  "
+    echo "|_| \_\_____|____/ \___/ \___/ |_|   |_| \_|\___/  \_/\_/   "
+    echo
+
 fi
 
 if pacman -Q neovim &> /dev/null; then
