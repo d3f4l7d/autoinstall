@@ -115,6 +115,13 @@ then
     echo "select pipewire-jack"
     yay -S firefox
 
+    echo "Create /etc/xdg/autostart/xofd.desktop for autostart."
+    echo "[Desktop Entry]"
+    echo "Name=xofd"
+    echo "Exec=/usr/bin/firefox"
+    echo "Type=Application"
+    echo "Terminal=false"
+
     echo "autoinstall of firefox -- DONE"
 else
     echo "firefox is already installed. Skip FOX process..."
