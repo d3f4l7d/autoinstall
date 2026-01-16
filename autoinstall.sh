@@ -45,11 +45,11 @@ if pacman -Q neovim &> /dev/null; then
     echo "neovim is already installed. Skip NvChad process..."
 else
     echo
-    echo " _   _        ____ _               _ "
-    echo "| \ | |_   __/ ___| |__   __ _  __| |"
-    echo "|  \| \ \ / / |   | '_ \ / _` |/ _` |"
-    echo "| |\  |\ V /| |___| | | | (_| | (_| |"
-    echo "|_| \_| \_/  \____|_| |_|\__,_|\__,_|"
+    echo " _   ___     ______ "
+    echo "| \ | \ \   / / ___|"
+    echo "|  \| |\ \ / / |    "
+    echo "| |\  | \ V /| |___ "
+    echo "|_| \_|  \_/  \____|"
     echo
 
     sudo pacman -S --noconfirm neovim ttf-jetbrains-mono-nerd unzip
