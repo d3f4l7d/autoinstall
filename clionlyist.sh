@@ -139,6 +139,8 @@ else
     echo "|_| \_|  \_/  |____/ "
     echo
 
+echo "[WARNING] systemd bootloader required!!!"
+
 sudo pacman -S --noconfirm nvidia-open-dkms nvidia-settings
 echo "lspci -k -d ::03xx && nvidia-smi"
 echo "switch Kernel driver in use: nouveau to nvidia"
@@ -154,10 +156,13 @@ echo 'export PATH="/opt/cuda/bin:$PATH"' >> ~/.zshrc
 echo 'export CUDA_HOME="/opt/cuda"' >> ~/.zshrc
 
 echo "sudo vim /etc/pacman.conf"
-echo "IgnorePkg = cuda cudnn"
+echo "IgnorePkg = gcc12 gcc12-libs cuda cudnn"
+echo "sudo vim /etc/mkinitcpio.conf"
+echo "remove kms hook"
+echo "HOOKS=(base udev autodetect microcode modconf keyboard keymap consolefont block filesystems fsck)"
+echo "sudo mkinitcpio -P"
 echo "sudo vim /etc/mkinitcpio.conf"
 echo "MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)"
-echo "HOOKS=(base udev autodetect microcode modconf keyboard keymap consolefont block filesystems fsck)"
 echo "sudo mkinitcpio -P"
 echo "sudo reboot"
 
