@@ -145,11 +145,11 @@ echo "switch Kernel driver in use: nouveau to nvidia"
 echo "also switch Kernel modules: nouveau to nouveau, nvidia_drm, nvidia"
 echo "In the end, if you could see nvidia-smi, it works!"
 mkdir ~/.config/d3f4l7d/nvidia
-wget -O ~/.config/nvidia/gcc12-12.3.0-6-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/g/gcc12/gcc12-12.3.0-6-x86_64.pkg.tar.zst
-wget -O ~/.config/nvidia/gcc12-libs-12.3.0-6-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/g/gcc12-libs/gcc12-libs-12.3.0-6-x86_64.pkg.tar.zst
-wget -O ~/.config/nvidia/cuda-12.3.2-1-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/c/cuda/cuda-12.3.2-1-x86_64.pkg.tar.zst
-wget -O ~/.config/nvidia/cudnn-8.9.7.29-1-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/c/cudnn/cudnn-8.9.7.29-1-x86_64.pkg.tar.zst
-sudo pacman -U ~/.config/nvidia/gcc12-12.3.0-6-x86_64.pkg.tar.zst ~/.config/nvidia/gcc12-libs-12.3.0-6-x86_64.pkg.tar.zst ~/.config/nvidia/cuda-12.3.2-1-x86_64.pkg.tar.zst ~/.config/nvidia/cudnn-8.9.7.29-1-x86_64.pkg.tar.zst
+wget -O ~/.config/d3f4l7d/nvidia/gcc12-12.3.0-6-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/g/gcc12/gcc12-12.3.0-6-x86_64.pkg.tar.zst
+wget -O ~/.config/d3f4l7d/nvidia/gcc12-libs-12.3.0-6-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/g/gcc12-libs/gcc12-libs-12.3.0-6-x86_64.pkg.tar.zst
+wget -O ~/.config/d3f4l7d/nvidia/cuda-12.3.2-1-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/c/cuda/cuda-12.3.2-1-x86_64.pkg.tar.zst
+wget -O ~/.config/d3f4l7d/nvidia/cudnn-8.9.7.29-1-x86_64.pkg.tar.zst https://archive.archlinux.org/packages/c/cudnn/cudnn-8.9.7.29-1-x86_64.pkg.tar.zst
+sudo pacman -U ~/.config/d3f4l7d/nvidia/gcc12-12.3.0-6-x86_64.pkg.tar.zst ~/.config/d3f4l7d/nvidia/gcc12-libs-12.3.0-6-x86_64.pkg.tar.zst ~/.config/d3f4l7d/nvidia/cuda-12.3.2-1-x86_64.pkg.tar.zst ~/.config/d3f4l7d/nvidia/cudnn-8.9.7.29-1-x86_64.pkg.tar.zst
 echo 'export PATH="/opt/cuda/bin:$PATH"' >> ~/.zshrc
 echo 'export CUDA_HOME="/opt/cuda"' >> ~/.zshrc
 
