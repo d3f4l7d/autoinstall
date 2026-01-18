@@ -19,8 +19,8 @@ else
     echo "|_|\_\___|"
     echo
 
-    sudo pacman -S kicad
-    sudo pacman -S --asdeps kicad-library kicad-library-3d
+    sudo pacman -S --noconfirm kicad
+    sudo pacman -S --asdeps --noconfirm kicad-library kicad-library-3d
     echo "If need Nightly, follow steps below"
     echo "sudo vim /etc/pacman.conf"
     echo "Add these:"
@@ -43,7 +43,7 @@ else
     echo " \____/_/   \_\____/ "
     echo
 
-    sudo pacman -S freecad
+    sudo pacman -S --noconfirm freecad
     git clone https://aur.archlinux.org/flashprint.git ~/.config/flashprint
     cd ~/.config/flashprint
     makepkg -sirc
@@ -63,7 +63,7 @@ else
     echo "|___|____/ "
     echo
 
-    sudo pacman -S inkscape python-tinycss2 typst gtksourceview3 texlive-latex texlive-latexrecommended texlive-latexextra gtk3
+    sudo pacman -S --noconfirm inkscape python-tinycss2 typst gtksourceview3 texlive-latex texlive-latexrecommended texlive-latexextra gtk3
     mkdir ~/.config/textext
     wget -O ~/.config/textext/TexText-Linux-1.13.0.tar.gz https://github.com/textext/textext/releases/download/1.13.0/TexText-Linux-1.13.0.tar.gz
     cd ~/.config/textext
@@ -85,7 +85,7 @@ else
     echo "|_____\___/ "
     echo
 
-    sudo pacman -S --needed ttf-caladea ttf-carlito ttf-dejavu ttf-liberation ttf-linux-libertine-g noto-fonts adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
+    sudo pacman -S --needed --noconfirm ttf-caladea ttf-carlito ttf-dejavu ttf-liberation ttf-linux-libertine-g noto-fonts adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
     git clone https://aur.archlinux.org/paru.git ~/.config/paru
     cd ~/.config/paru
     makepkg -sirc
@@ -93,7 +93,7 @@ else
     paru ttf-gentium-basic
     echo "select jdk21-openjdk 4 hsqldb2"
     paru hsqldb2-java
-    sudo pacman -S libreoffice-fresh
+    sudo pacman -S --noconfirm libreoffice-fresh
 
     echo "autoinstall of libreoffice -- DONE"
 fi
@@ -138,7 +138,7 @@ else
     echo "   \_/  |_____\____|"
     echo
 
-    sudo pacman -S vlc vlc-plugins-all
+    sudo pacman -S --noconfirm vlc vlc-plugins-all
 
     echo "vlc-plugin will be applied after reboot"
     echo "autoinstall of vlc -- DONE"
@@ -156,7 +156,7 @@ else
     echo
 
     echo "select ALL"
-    sudo pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
+    sudo pacman -S --noconfirm xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
     sudo systemctl enable lightdm
     
     echo "Xfce4 will be applied after reboot"
