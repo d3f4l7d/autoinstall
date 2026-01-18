@@ -156,7 +156,7 @@ else
     echo 'export CUDA_HOME="/opt/cuda"' >> ~/.zshrc
 
     echo "sudo vim /etc/pacman.conf"
-    echo "IgnorePkg = gcc12 gcc12-libs cuda cudnn"
+    echo "IgnorePkg = nvidia-open-dkms dkms cuda cudnn gcc12 gcc12-libs"
     echo "sudo vim /etc/mkinitcpio.conf"
     echo "remove kms hook"
     echo "HOOKS=(base udev autodetect microcode modconf keyboard keymap consolefont block filesystems fsck)"
