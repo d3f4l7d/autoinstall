@@ -126,6 +126,7 @@ if [ ! -f ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage ]; then
     chmod +x ~/.local/share/AppImage/arduino-ide_2.3.7_Linux_64bit.AppImage
     mkdir -p ~/.local/share/application
     mkdir -p ~/.local/share/icon
+    cp -r ~/.config/d3f4l7d/autoinstall/icon ~/.local/share
     sudo usermod -a -G uucp d3f4l7
 
     echo "Create App Interface (ArduinoProIDE) in ~/.local/share/application/arduino-ide_2.3.7_Linux_64bit.desktop"
