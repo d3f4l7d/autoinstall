@@ -1,4 +1,4 @@
-# autoinstall script for fresh Arch Linux system
-Execute autoinstall.sh (for coding env) then softinstall.sh (for GUI based work) or nvidiainstall.sh (for machine learning related work)
-# If you hate GUI, exec clionlyist.sh
-
+# Installation
+1. ./clionlyist.sh
+2. ./autoinstall.sh
+3. ./softinstall.sh
