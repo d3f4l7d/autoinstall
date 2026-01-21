@@ -8,6 +8,25 @@ echo
 
 sudo pacman -Syu --noconfirm
 
+if pacman -Q bluez &> /dev/null; then
+    echo "bluez is already installed. Skip BLUE process..."
+else
+    echo
+    echo "  ____  _    _   _ _____ "
+    echo " | __ )| |  | | | | ____|"
+    echo " |  _ \| |  | | | |  _|  "
+    echo " | |_) | |__| |_| | |___ "
+    echo " |____/|_____\___/|_____|"
+    echo
+
+    sudo pacman -S --noconfirm bluez bluez-utils blueman pipewire-pulse pavucontrol
+    sudo systemctl start bluetooth.service
+    sudo systemctl enable bluetooth.service
+
+    echo "Uncomment #AutoEnable=true in /etc/bluetooth/main.conf"
+    echo "autoinstall of bluetooth -- DONE"
+fi
+
 if pacman -Q gvfs-mtp &> /dev/null; then
     echo "gvfs is already installed. Skip GVFS process..."
 else
@@ -23,7 +42,7 @@ else
 
     echo "autoinstall of mgr -- DONE"
 fi
-    
+
 if pacman -Q kicad &> /dev/null; then
     echo "kicad is already installed. Skip KI process..."
 else
