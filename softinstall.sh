@@ -8,6 +8,22 @@ echo
 
 sudo pacman -Syu --noconfirm
 
+if pacman -Q gvfs-mtp &> /dev/null; then
+    echo "gvfs is already installed. Skip GVFS process..."
+else
+    echo
+    echo "  ______     _______ ____  "
+    echo " / ___\ \   / /  ___/ ___| "
+    echo "| |  _ \ \ / /| |_  \___ \ "
+    echo "| |_| | \ V / |  _|  ___) |"
+    echo " \____|  \_/  |_|   |____/ "
+    echo
+
+    sudo pacman -S --noconfirm gvfs gvfs-mtp gnome-disk-utility gnome-keyring gvfs-smb samba evince
+
+    echo "autoinstall of mgr -- DONE"
+fi
+    
 if pacman -Q kicad &> /dev/null; then
     echo "kicad is already installed. Skip KI process..."
 else
