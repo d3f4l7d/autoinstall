@@ -84,7 +84,9 @@ if pacman -Q python-pip &> /dev/null; then
     echo "python-pip is already installed. Skip PY process..."
     echo "pyenv install 3.10 (3.10.19)"
     echo "pyenv local 3.10.19"
+    echo "pyenv global 3.10.19"
     echo "pyenv virtualenv 3.10.19 venv10"
+    echo "pyenv global venv10"
 else
     echo
     echo " ______   __"
