@@ -86,7 +86,7 @@ if pacman -Q python-pip &> /dev/null; then
     echo "pyenv local 3.10.19"
     echo "pyenv global 3.10.19"
     echo "pyenv virtualenv 3.10.19 venv10"
-    echo "pyenv local venv10"
+    echo "pyenv global venv10"
 else
     echo
     echo " ______   __"
