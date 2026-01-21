@@ -96,24 +96,6 @@ else
     echo "autoinstall of bluetooth -- DONE"
 fi
 
-if pacman -Q cups &> /dev/null; then
-    echo "cups is already installed. Skip CUPS process..."
-else
-    echo
-    echo "   ____ _   _ ____  ____  "
-    echo "  / ___| | | |  _ \/ ___| "
-    echo " | |   | | | | |_) \___ \ "
-    echo " | |___| |_| |  __/ ___) |"
-    echo "  \____|\___/|_|   |____/ "
-    echo
-
-    sudo pacman -S --noconfirm cups libxml2-legacy
-    sudo systemctl start cups
-    sudo systemctl enable cups
-
-    echo "autoinstall of cups -- DONE"
-fi
-
 if pacman -Q gvfs-mtp &> /dev/null; then
     echo "gvfs is already installed. Skip GVFS process..."
 else
