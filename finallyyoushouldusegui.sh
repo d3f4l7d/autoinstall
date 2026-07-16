@@ -235,24 +235,6 @@ else
 fi
 
 
-if pacman -Q vlc &> /dev/null; then
-    echo "vlc is already installed. Skip VLC process..."
-else
-    echo
-    echo "__     ___     ____ "
-    echo "\ \   / / |   / ___|"
-    echo " \ \ / /| |  | |    "
-    echo "  \ V / | |__| |___ "
-    echo "   \_/  |_____\____|"
-    echo
-
-    sudo pacman -S --noconfirm vlc vlc-plugins-all
-
-    echo "vlc-plugin will be applied after reboot"
-    echo "autoinstall of vlc -- DONE"
-fi
-
-
 echo
 echo " ____  _____ ____   ___   ___ _____   _   _  _____        __"
 echo "|  _ \| ____| __ ) / _ \ / _ \_   _| | \ | |/ _ \ \      / /"
