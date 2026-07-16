@@ -23,7 +23,6 @@ This repository will give you "lazy" way to install some fundamental programs fo
 | 07 | EB-Garamond |
 | 08 | freecad |
 | 09 | kicad |
-| 10 | vlc |
 
 > [!WARNING]
 > password will be needed for some steps in finallyyoushouldusegui.sh (around LO step). So, type it when that happens. 
