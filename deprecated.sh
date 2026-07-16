@@ -64,3 +64,22 @@ else
     echo "Jekyll is already installed. Skip JH process..."
 fi
 
+
+if pacman -Q vlc &> /dev/null; then
+    echo "vlc is already installed. Skip VLC process..."
+else
+    echo
+    echo "__     ___     ____ "
+    echo "\ \   / / |   / ___|"
+    echo " \ \ / /| |  | |    "
+    echo "  \ V / | |__| |___ "
+    echo "   \_/  |_____\____|"
+    echo
+
+    sudo pacman -S --noconfirm vlc vlc-plugins-all
+
+    echo "vlc-plugin will be applied after reboot"
+    echo "autoinstall of vlc -- DONE"
+fi
+
+
