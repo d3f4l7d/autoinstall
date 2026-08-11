@@ -31,9 +31,12 @@ else
     echo "Replace NEWLINE_BEFORE_PROMPT=yes to no on ~/.oh-my-zsh/themes/kali-like.zsh-theme."
     echo "Replace val of ZSH_THEME from robbyrussell to kali-like."
     echo "(Not for Console) 'kitty +list-fonts' to change fonts to your preferred one such as Fira Code in my case."
+    echo "(Not for Console) Change 'scrollback_lines 2000' to 'scrollback_lines 10000' in ~/.config/kitty/kitty.conf for faster scrolling."
+    echo "(Not for Console) Change 'mouse_hide_wait 3.0' to 'mouse_hide_wait -3.0' in ~/.config/kitty/kitty.conf for hide mouse pointer."
+    echo "(Not for Console) Change 'hide_window_decoration yes' in ~/.config/kitty/kitty.conf for more beautiful coding view."
+    echo "(Not for Console) Change 'tab_bar_style fade' to 'tab_bar_style powerline' in ~/.config/kitty/kitty.conf for powerline style tab."
+    echo "(Not for Console) Change 'tab_powerline_style angled' in ~/.config/kitty/kitty.conf for more beautiful cool powerline view."
     echo "(Not for Console) 'enabled_layouts tall:bias=50;full_size=1;mirrored=true' in ~/.config/kitty/kitty.conf for my favorite view."
-    echo "(Not for Console) 'enabled_layouts grid' in ~/.config/kitty/kitty.conf for grid view."
-    echo "(Not for Console) 'enabled_layouts vertical' in ~/.config/kitty/kitty.conf for vertical view"
     echo "autoinstall of zsh -- DONE"
 
     echo
